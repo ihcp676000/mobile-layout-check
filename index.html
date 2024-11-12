@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film By Him Mobile View</title>
+  <style>
+    /* Reset full-page container settings */
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      overscroll-behavior: none; /* Prevents stretchy scrolling */
+    }
+    /* Style for iframe container with mobile adjustments */
+    .iframe-container {
+      position: absolute;
+      top: -10vh; /* Shift iframe up by 10% to hide the top branding area */
+      left: 0;
+      width: 100vw; /* Set width to 100% of viewport width */
+      height: 110vh; /* Extend height to compensate for the upward shift */
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Embed the Wix site in an iframe -->
+  <iframe src="https://filmbyhim.wixsite.com/my-site-1" class="iframe-container"></iframe>
+</body>
+</html>
