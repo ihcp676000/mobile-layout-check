@@ -1,58 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Embedded Wix Portfolio</title>
-    <style>
-        /* Remove any extra spacing */
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100vh;
-            background-color: #ffffff;
-        }
-
-        /* Full-screen iframe styling with adjustments */
-        #wix-iframe-container {
-            position: relative;
-            width: 100vw;
-            height: 95vh; /* Allows for top 5% crop */
-            overflow: hidden;
-        }
-
-        iframe {
-            position: absolute;
-            top: -5vh; /* Crop out the top 5% */
-            left: -7.5vw;
-            width: 115vw; /* 15% zoom-in */
-            height: 115vh;
-            border: none;
-            transform: scale(1.15); /* Proportional zoom-in */
-            transform-origin: center center; /* Centered zoom */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Redirect</title>
 </head>
 <body>
 
-    <!-- Container for the iframe with crop and zoom adjustments -->
-    <div id="wix-iframe-container">
-        <iframe src="https://filmbyhim.wixsite.com/my-site-1" id="wix-iframe" scrolling="yes"></iframe>
-    </div>
+<script>
+  // Function to detect mobile devices
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
 
-    <script>
-        function adjustIframe() {
-            const container = document.getElementById('wix-iframe-container');
-            container.style.height = window.innerHeight + 'px';
-        }
-
-        // Recalculate the container height on resize and load events
-        window.addEventListener('resize', adjustIframe);
-        window.addEventListener('load', adjustIframe);
-    </script>
+  // Redirect to the Wix site if on a mobile device
+  if (isMobile()) {
+    window.location.href = "https://filmbyhim.wixsite.com/my-site-1";
+  }
+</script>
 
 </body>
 </html>
-
 
