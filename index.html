@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masked Wix Mobile Layout</title>
+  <title>Wix Mobile Layout with Masked Header</title>
   <style>
-    /* Ensure container fills viewport and prevents overflow */
+    /* Container for the iframe to load the Wix site */
     .iframe-container {
       position: relative;
       width: 100vw;
@@ -13,21 +13,33 @@
       overflow: hidden;
     }
 
-    /* Responsive iframe with upward shift to mask the top 5% */
+    /* The iframe to display the Wix site */
     .iframe-container iframe {
-      position: absolute;
-      top: -5vh; /* Mask top 5% of the iframe content */
-      left: 0;
-      width: 100vw;
-      height: 110vh; /* Extra height to cover masked area */
+      width: 100%;
+      height: 100vh;
       border: none;
+    }
+
+    /* Overlay to mask the top 10% of the screen */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10vh; /* Covers the top 10% of the viewport */
+      background-color: white; /* Matches background color to blend in */
+      z-index: 1; /* Ensures it stays above the iframe */
     }
   </style>
 </head>
 <body>
 
 <div class="iframe-container">
-  <iframe src="https://filmbyhim.wixsite.com/my-site-1" scrolling="no"></iframe>
+  <!-- Overlay at the top to cover Wix branding -->
+  <div class="overlay"></div>
+  
+  <!-- Iframe loading the Wix site -->
+  <iframe src="https://filmbyhim.wixsite.com/my-site-1"></iframe>
 </div>
 
 </body>
