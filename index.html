@@ -18,18 +18,18 @@
         #wix-iframe-container {
             position: relative;
             width: 100vw;
-            height: 95vh; /* Allows for top 5% crop */
+            height: 100vh; /* Adjust height to make the bottom fully visible */
             overflow: hidden;
         }
 
         iframe {
             position: absolute;
-            top: -5vh; /* Crop out the top 5% */
-            left: -8.5vw;
-            width: 125vw; /* 15% zoom-in */
-            height: 125vh;
+            top: -3vh; /* Crop out the top 3% */
+            left: -7.5vw;
+            width: 117vw; /* Increase zoom to 17% */
+            height: 117vh;
             border: none;
-            transform: scale(1.15); /* Proportional zoom-in */
+            transform: scale(1.17); /* Increase zoom-in by 2% */
             transform-origin: center center; /* Centered zoom */
         }
     </style>
