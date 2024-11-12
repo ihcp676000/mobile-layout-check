@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Redirect with Header Masking</title>
+  <title>Mobile Layout with Header Masking</title>
   <style>
-    /* Styling for the iframe container */
+    /* Fullscreen container to ensure proper layout */
     .iframe-container {
       position: relative;
-      width: 100%;
-      height: 100vh; /* Full viewport height */
-      overflow: hidden; /* Hide any overflow */
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    /* Iframe styling */
+    /* Iframe settings to maintain responsiveness */
     .iframe-container iframe {
       position: absolute;
-      top: -5vh; /* Shift up by 5% of the viewport height */
+      top: -5vh; /* Shift the iframe up by 5% */
       left: 0;
-      width: 100%;
-      height: 110vh; /* Make iframe taller to cover shifted content */
-      border: none; /* Remove any border */
+      width: 100vw; /* Ensure full-width display */
+      height: 105vh; /* Slightly taller to cover the viewport after shifting */
+      border: none; /* Remove iframe border */
     }
   </style>
 </head>
@@ -32,5 +32,3 @@
 
 </body>
 </html>
-
-
