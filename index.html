@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Redirect with Scroll Adjustment</title>
+  <title>Masked Wix Mobile Layout</title>
+  <style>
+    /* Ensure container fills viewport and prevents overflow */
+    .iframe-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Responsive iframe with upward shift to mask the top 5% */
+    .iframe-container iframe {
+      position: absolute;
+      top: -5vh; /* Mask top 5% of the iframe content */
+      left: 0;
+      width: 100vw;
+      height: 110vh; /* Extra height to cover masked area */
+      border: none;
+    }
+  </style>
 </head>
 <body>
 
-<script>
-  // Function to detect mobile devices
-  function isMobile() {
-    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  }
-
-  // Redirect to Wix site on mobile and apply scroll adjustment
-  if (isMobile()) {
-    // Navigate to Wix URL
-    window.location.href = "https://filmbyhim.wixsite.com/my-site-1";
-
-    // Add event listener to scroll up once the Wix site loads
-    window.onload = function() {
-      // Scroll up by 5% of the viewport height
-      window.scrollTo(0, window.innerHeight * 0.05);
-    };
-  }
-</script>
+<div class="iframe-container">
+  <iframe src="https://filmbyhim.wixsite.com/my-site-1" scrolling="no"></iframe>
+</div>
 
 </body>
 </html>
