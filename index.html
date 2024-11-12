@@ -14,43 +14,39 @@
             background-color: #ffffff;
         }
 
-        /* Full-screen iframe styling with adjustments */
-        #wix-iframe-container {
+        /* Full-screen container */
+        #wix-container {
             position: relative;
             width: 100vw;
-            height: 100vh; /* Adjust height to make the bottom fully visible */
+            height: 100vh;
             overflow: hidden;
         }
 
-        iframe {
+        /* Embed the Wix website without iframe */
+        object {
             position: absolute;
-            top: -3vh; /* Crop out the top 3% */
-            left: -7.5vw;
-            width: 117vw; /* Increase zoom to 17% */
-            height: 117vh;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: none;
-            transform: scale(1.17); /* Increase zoom-in by 2% */
-            transform-origin: center center; /* Centered zoom */
+        }
+
+        /* Mobile-specific CSS to adjust the top 5% */
+        @media (max-width: 768px) {
+            object {
+                transform: translateY(-5%); /* Shift content 5% upwards */
+                height: 105%; /* Increase the height to compensate for the shift */
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Container for the iframe with crop and zoom adjustments -->
-    <div id="wix-iframe-container">
-        <iframe src="https://filmbyhim.wixsite.com/my-site-1" id="wix-iframe" scrolling="yes"></iframe>
+    <!-- Container for embedding Wix website directly -->
+    <div id="wix-container">
+        <object data="https://filmbyhim.wixsite.com/my-site-1" type="text/html"></object>
     </div>
-
-    <script>
-        function adjustIframe() {
-            const container = document.getElementById('wix-iframe-container');
-            container.style.height = window.innerHeight + 'px';
-        }
-
-        // Recalculate the container height on resize and load events
-        window.addEventListener('resize', adjustIframe);
-        window.addEventListener('load', adjustIframe);
-    </script>
 
 </body>
 </html>
