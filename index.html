@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Redirect</title>
+  <title>Mobile Redirect and Adjust</title>
+  <style>
+    /* Apply this style only on mobile */
+    @media only screen and (max-width: 768px) {
+      /* Target the entire page content */
+      body {
+        margin-top: -5vh; /* Shift content up by 5% of the viewport height */
+        overflow-y: hidden; /* Hide any overflow */
+      }
+    }
+  </style>
 </head>
 <body>
 
 <script>
-  // Function to detect mobile devices
+  // Redirect to the Wix site if on a mobile device
   function isMobile() {
     return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   }
 
-  // Redirect to the Wix site if on a mobile device
   if (isMobile()) {
     window.location.href = "https://filmbyhim.wixsite.com/my-site-1";
   }
@@ -21,4 +30,5 @@
 
 </body>
 </html>
+
 
