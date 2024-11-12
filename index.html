@@ -5,22 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Film By Him Mobile View</title>
   <style>
-    /* Reset full-page container settings */
+    /* Reset styles to ensure iframe fills the screen */
     html, body {
       margin: 0;
       padding: 0;
       overflow: hidden;
-      height: 100%;
-      overscroll-behavior: none; /* Prevents stretchy scrolling */
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
     }
-    /* Style for iframe container with mobile adjustments */
+    /* Style for iframe container on mobile */
     .iframe-container {
-      position: absolute;
-      top: -10vh; /* Shift iframe up by 10% to hide the top branding area */
-      left: 0;
-      width: 100vw; /* Set width to 100% of viewport width */
+      position: relative;
+      top: -10vh; /* Shift iframe up to cut off the top branding section */
+      width: 100vw; /* Set iframe width to cover full viewport width */
       height: 110vh; /* Extend height to compensate for the upward shift */
       border: none;
+      margin: 0; /* Remove any default margin */
+      padding: 0; /* Remove any default padding */
+      display: block;
     }
   </style>
 </head>
