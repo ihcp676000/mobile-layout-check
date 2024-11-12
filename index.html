@@ -13,18 +13,20 @@
       width: 100vw;
       height: 100vh;
       display: flex;
-      align-items: stretch;
+      align-items: center;
       justify-content: center;
     }
     /* Style for iframe container on mobile */
     .iframe-container {
       position: relative;
-      top: -5vh; /* Shift iframe up to cut off the top branding section */
-      width: 100vw; /* Set iframe width to cover full viewport width */
-      height: 100vh; /* Extend height to compensate for the upward shift */
+      top: -10vh; /* Shift iframe up to cut off the top branding section */
+      width: 102vw; /* Slightly increase the width by 2% */
+      height: 112vh; /* Slightly increase height to match zoomed width */
+      transform: scale(1.02); /* Zoom in by 2% */
+      transform-origin: top left; /* Keep the zoom effect aligned to the top left */
       border: none;
-      margin: 0; /* Remove any default margin */
-      padding: -10; /* Remove any default padding */
+      margin: 0;
+      padding: 0;
       display: block;
     }
   </style>
