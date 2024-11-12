@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Redirect and Adjust</title>
+  <title>Mobile Redirect with Header Masking</title>
   <style>
-    /* Apply this style only on mobile */
-    @media only screen and (max-width: 768px) {
-      /* Target the entire page content */
-      body {
-        margin-top: -5vh; /* Shift content up by 5% of the viewport height */
-        overflow-y: hidden; /* Hide any overflow */
-      }
+    /* Styling for the iframe container */
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Hide any overflow */
+    }
+
+    /* Iframe styling */
+    .iframe-container iframe {
+      position: absolute;
+      top: -5vh; /* Shift up by 5% of the viewport height */
+      left: 0;
+      width: 100%;
+      height: 110vh; /* Make iframe taller to cover shifted content */
+      border: none; /* Remove any border */
     }
   </style>
 </head>
 <body>
 
-<script>
-  // Redirect to the Wix site if on a mobile device
-  function isMobile() {
-    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  }
-
-  if (isMobile()) {
-    window.location.href = "https://filmbyhim.wixsite.com/my-site-1";
-  }
-</script>
+<div class="iframe-container">
+  <iframe src="https://filmbyhim.wixsite.com/my-site-1"></iframe>
+</div>
 
 </body>
 </html>
