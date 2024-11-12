@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Film By Him Mobile View</title>
-  <style>
-    /* Reset styles to ensure iframe fills the screen */
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    /* Style for iframe container on mobile */
-    .iframe-container {
-      position: relative;
-      top: -10vh; /* Shift iframe up to cut off the top branding section */
-      width: 102vw; /* Slightly increase the width by 2% */
-      height: 112vh; /* Slightly increase height to match zoomed width */
-      transform: scale(1.02); /* Zoom in by 2% */
-      transform-origin: top left; /* Keep the zoom effect aligned to the top left */
-      border: none;
-      margin: 0;
-      padding: 0;
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Embedded Wix Portfolio</title>
+    <style>
+        /* Remove any extra spacing */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        /* Full-screen iframe styling */
+        iframe {
+            width: 103vw; /* 3% zoom */
+            height: 103vh;
+            border: none;
+            transform: scale(1.03); /* Proportional zoom */
+            transform-origin: center center; /* Centered zoom */
+        }
+    </style>
 </head>
 <body>
-  <!-- Embed the Wix site in an iframe -->
-  <iframe src="https://filmbyhim.wixsite.com/my-site-1" class="iframe-container"></iframe>
+
+    <!-- Embed Wix website in an iframe -->
+    <iframe src="https://filmbyhim.wixsite.com/my-site-1" id="wix-iframe" scrolling="no"></iframe>
+
+    <script>
+        function adjustIframe() {
+            const iframe = document.getElementById('wix-iframe');
+            iframe.style.height = window.innerHeight + 'px';
+        }
+
+        // Ensure iframe height is recalibrated on load and resize
+        window.addEventListener('resize', adjustIframe);
+        window.addEventListener('load', adjustIframe);
+    </script>
+
 </body>
 </html>
