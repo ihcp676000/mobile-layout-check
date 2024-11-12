@@ -14,31 +14,44 @@
             background-color: #ffffff;
         }
 
-        /* Full-screen iframe styling */
+        /* Full-screen iframe styling with adjustments */
+        #wix-iframe-container {
+            position: relative;
+            width: 100vw;
+            height: 95vh; /* Allows for top 5% crop */
+            overflow: hidden;
+        }
+
         iframe {
-            width: 103vw; /* 3% zoom */
-            height: 103vh;
+            position: absolute;
+            top: -5vh; /* Crop out the top 5% */
+            left: -5vw;
+            width: 110vw; /* 10% zoom-in */
+            height: 110vh;
             border: none;
-            transform: scale(1.03); /* Proportional zoom */
+            transform: scale(1.10); /* Proportional zoom-in */
             transform-origin: center center; /* Centered zoom */
         }
     </style>
 </head>
 <body>
 
-    <!-- Embed Wix website in an iframe -->
-    <iframe src="https://filmbyhim.wixsite.com/my-site-1" id="wix-iframe" scrolling="no"></iframe>
+    <!-- Container for the iframe with crop and zoom adjustments -->
+    <div id="wix-iframe-container">
+        <iframe src="https://filmbyhim.wixsite.com/my-site-1" id="wix-iframe" scrolling="yes"></iframe>
+    </div>
 
     <script>
         function adjustIframe() {
-            const iframe = document.getElementById('wix-iframe');
-            iframe.style.height = window.innerHeight + 'px';
+            const container = document.getElementById('wix-iframe-container');
+            container.style.height = window.innerHeight + 'px';
         }
 
-        // Ensure iframe height is recalibrated on load and resize
+        // Recalculate the container height on resize and load events
         window.addEventListener('resize', adjustIframe);
         window.addEventListener('load', adjustIframe);
     </script>
 
 </body>
 </html>
+
