@@ -3,15 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Wix Embedded Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mobile Site Background</title>
+    <style>
+        /* Reset body margin and padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        /* Full-screen iFrame styling */
+        .iframe-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            z-index: -1; /* Send it to the background */
+        }
+
+        /* Additional styles for text or content overlay */
+        .content-overlay {
+            position: relative;
+            z-index: 1; /* Above the iFrame */
+            text-align: center;
+            color: #fff; /* Example color, adjust as needed */
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Embed your Wix URL here -->
-    <iframe id="wix-embed" src="https://filmbyhim.wixsite.com/my-site-1"></iframe>
-    
-    <!-- Include JavaScript file -->
-    <script src="script.js"></script>
+    <!-- iFrame for the Wix site -->
+    <iframe 
+        class="iframe-container"
+        src="https://filmbyhim.wixsite.com/my-site-1"
+        frameborder="0">
+    </iframe>
+
+    <!-- Content overlay example -->
+    <div class="content-overlay">
+        <h1>Welcome to Film By Him</h1>
+        <p>Explore our work below</p>
+    </div>
 </body>
 </html>
 
