@@ -10,39 +10,41 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            transform: scale(1.05); /* Apply 5% zoom */
-            transform-origin: center; /* Center the zoom effect */
         }
         
-        /* Full-screen iFrame styling */
-        .iframe-container {
+        /* Wrapper for zoom effect */
+        .zoom-wrapper {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            border: none;
-            z-index: -1; /* Send it to the background */
+            overflow: hidden;
+            transform: scale(1.05); /* Apply 5% zoom */
+            transform-origin: center; /* Center the zoom */
         }
 
-        /* Additional styles for text or content overlay */
-        .content-overlay {
-            position: relative;
-            z-index: 1; /* Above the iFrame */
-            text-align: center;
-            color: #fff; /* Example color, adjust as needed */
-            padding: 20px;
+        /* Full-screen iFrame styling */
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <!-- iFrame for the Wix site -->
-    <iframe 
-        class="iframe-container"
-        src="https://filmbyhim.wixsite.com/my-site-1"
-        frameborder="0">
-    </iframe>
+    <!-- Wrapper for zoom effect -->
+    <div class="zoom-wrapper">
+        <!-- iFrame for the Wix site -->
+        <iframe 
+            class="iframe-container"
+            src="https://filmbyhim.wixsite.com/my-site-1"
+            frameborder="0">
+        </iframe>
+    </div>
 </body>
 </html>
+
+
 
 
