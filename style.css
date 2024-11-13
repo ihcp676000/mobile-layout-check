@@ -1,17 +1,18 @@
-/* Ensure the iframe fills the screen */
+/* Centered iframe with fixed, reduced width */
 #wix-embed {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%) scale(1.03); /* Center and apply 3% zoom */
-  width: 100vw;
-  height: 100vh;
+  width: 90vw; /* Fixed width at 90% of viewport */
+  height: 100vh; /* Full height of viewport */
   overflow: hidden;
+  pointer-events: auto; /* Allow interaction without layout scroll bars */
 }
 
 /* Fixed white strip to cover the top 5% for hiding the header */
 #header-cover {
-  position: fixed; /* Changed to fixed to ensure it stays on top during scroll */
+  position: fixed; /* Ensures header cover stays on top during scroll */
   top: 0;
   left: 0;
   width: 100%;
@@ -20,17 +21,19 @@
   z-index: 1;
 }
 
-/* Remove any unwanted horizontal scroll on mobile */
+/* Prevent any unwanted body scroll on mobile */
 body, html {
-  overflow-x: hidden;
+  overflow: hidden; /* No scroll on the main page */
+  margin: 0;
+  padding: 0;
 }
 
-/* Apply a zoom specifically for mobile layout and keep content centered */
+/* Specific styling for mobile screens */
 @media only screen and (max-width: 767px) {
   #wix-embed {
     transform: translateX(-50%) scale(1.03); /* Keep centered and zoomed */
     transform-origin: top center; /* Anchor scaling to the center */
+    width: 90vw; /* Consistent 90% width on mobile */
+    height: 100vh; /* Full viewport height */
   }
 }
-
-
