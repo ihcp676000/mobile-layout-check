@@ -2,51 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Embedded Wix Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Wix Site with Header Overlay</title>
     <style>
-        /* Remove any extra spacing */
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100vh;
-            background-color: #ffffff;
-        }
-
-        /* Full-screen container */
-        #wix-container {
+        /* Container that holds the Wix website */
+        .wix-container {
             position: relative;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            background: url('https://filmbyhim.wixsite.com/my-site-1') no-repeat center top;
+            background-size: cover;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
         }
 
-        /* Embed the Wix website without iframe */
-        object {
+        /* White strip overlay */
+        .white-strip {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            border: none;
+            height: 7%; /* Covering 7% of the Wix site as header */
+            background-color: white;
+            z-index: 1;
         }
 
-        /* Aggressive mobile-specific adjustment: shift height by 5% */
-        @media (max-width: 768px) {
-            object {
-                transform: translateY(-5%); /* Shift content 5% upwards */
-                height: 110%; /* Increase height to accommodate the upward shift */
+        /* Media query for mobile devices */
+        @media only screen and (max-width: 767px) {
+            .wix-container {
+                background-size: 997px 948px; /* Adjust for desktop layout on mobile */
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Container for embedding Wix website directly -->
-    <div id="wix-container">
-        <object data="https://filmbyhim.wixsite.com/my-site-1" type="text/html"></object>
+    <!-- Wix container with header overlay -->
+    <div class="wix-container">
+        <div class="white-strip"></div>
     </div>
 
 </body>
 </html>
+
