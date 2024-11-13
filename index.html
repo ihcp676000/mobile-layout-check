@@ -10,6 +10,9 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            scroll-behavior: auto; /* Disable smooth scrolling */
+            overscroll-behavior: none; /* Prevent stretchy over-scroll effect */
+            -webkit-overflow-scrolling: auto; /* Disable touch-based bounce scrolling */
         }
         
         /* Wrapper with 5% zoom */
@@ -17,9 +20,9 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 145vw; /* Increase width by 5% */
-            height: 145vh; /* Increase height by 5% */
-            transform: scale(5.05); /* Apply 5% zoom */
+            width: 105vw; /* Increase width by 5% */
+            height: 105vh; /* Increase height by 5% */
+            transform: scale(1.05); /* Apply 5% zoom */
             transform-origin: center; /* Center the zoom */
             overflow: hidden;
             z-index: -1;
@@ -55,8 +58,8 @@
 
     <!-- Content overlay example -->
     <div class="content-overlay">
-        <h1>Welcome to Film By Him</h1>
-        <p>Explore our work below</p>
+        <h1></h1>
+        <p></p>
     </div>
 </body>
 </html>
