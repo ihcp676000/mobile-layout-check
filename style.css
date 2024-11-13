@@ -1,16 +1,17 @@
-/* Make sure the iframe fills the screen */
+/* Ensure the iframe fills the screen */
 #wix-embed {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(1.03); /* Center and apply 3% zoom */
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
-/* Cover the top 5% with a white strip to hide the header */
+/* Fixed white strip to cover the top 5% for hiding the header */
 #header-cover {
-  position: absolute;
+  position: fixed; /* Changed to fixed to ensure it stays on top during scroll */
   top: 0;
   left: 0;
   width: 100%;
@@ -19,10 +20,17 @@
   z-index: 1;
 }
 
-/* Apply a 3% zoom for mobile layouts */
+/* Remove any unwanted horizontal scroll on mobile */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Apply a zoom specifically for mobile layout and keep content centered */
 @media only screen and (max-width: 767px) {
   #wix-embed {
-    transform: scale(1.03); /* 3% zoom */
-    transform-origin: top left; /* Keep it aligned to the top left */
+    transform: translateX(-50%) scale(1.03); /* Keep centered and zoomed */
+    transform-origin: top center; /* Anchor scaling to the center */
   }
 }
+
+
