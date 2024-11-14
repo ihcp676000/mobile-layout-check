@@ -3,64 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Site Background</title>
-    <style>
-        /* Reset body margin and padding */
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            scroll-behavior: auto; /* Disable smooth scrolling */
-            overscroll-behavior: none; /* Prevent stretchy over-scroll effect */
-            -webkit-overflow-scrolling: auto; /* Disable touch-based bounce scrolling */
-        }
-        
-        /* Wrapper with 5% zoom */
-        .zoom-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 105vw; /* Increase width by 5% */
-            height: 105vh; /* Increase height by 5% */
-            transform: scale(1.05); /* Apply 5% zoom */
-            transform-origin: center; /* Center the zoom */
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        /* Full-screen iFrame styling */
-        .iframe-container {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Additional styles for text or content overlay */
-        .content-overlay {
-            position: relative;
-            z-index: 1; /* Above the iFrame */
-            text-align: center;
-            color: #fff; /* Example color, adjust as needed */
-            padding: 20px;
-        }
-    </style>
+    <title>Embed Wix Site</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
 </head>
 <body>
-    <!-- Wrapper for zoom effect -->
-    <div class="zoom-wrapper">
-        <!-- iFrame for the Wix site -->
-        <iframe 
-            class="iframe-container"
-            src="https://filmbyhim.wixsite.com/my-site-1"
-            frameborder="0">
-        </iframe>
+    <div id="wix-container">
+        <iframe src="https://filmbyhim.wixsite.com/my-site-3" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 
-    <!-- Content overlay example -->
-    <div class="content-overlay">
-        <h1></h1>
-        <p></p>
-    </div>
+    <script src="script.js"></script> <!-- Link to your JS -->
 </body>
 </html>
 
